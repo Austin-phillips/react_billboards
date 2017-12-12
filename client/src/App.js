@@ -19,9 +19,7 @@ class App extends Component {
       <Container>
         <Header size='huge' textAlign='center'>Music Billboard React</Header>
         <SongForm />
-        <SongList
-        title={this.state.title}
-         />
+        <SongList />
       </Container>
     );
   }

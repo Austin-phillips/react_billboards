@@ -12,7 +12,13 @@ class SongForm extends React.Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
-    axios.post(`/api/billboards/${this.state.billboardId}/songs`, {...this.state});
+    this.setState({ title: '', artist: ''})
+    axios.post(`/api/billboards/${this.state.billboardId}/songs`, {...this.state})
+      .then(res => {
+        this.setState({title: '', artist: ''});
+      }).catch(res => {
+        console.log(res.data)
+      })
   }
 
   render() {
